@@ -1,0 +1,358 @@
+html {
+    --blue: hsl(246, 80%, 60%);
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --excercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desat-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    background-color: var(--very-dark-blue);
+    color: var(--pale-blue);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.picture {
+    background-color: black;
+    width: auto;
+    margin: -1rem -1.5rem 1rem;
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.picture::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    background-color: var(--dark-blue);
+}
+
+.picture img {
+    max-width: 100%;
+    object-fit: cover;
+    height: 60px;
+    width: 90px;
+    object-position: center;
+    margin-right: 1rem;
+}
+
+.hide {
+    display: none;
+}
+
+.selected {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+.container {
+    max-width: 1200px;
+    min-width: 350px;
+    width: 80%;
+    display: grid;
+    grid-template-areas:
+        "profile work play study"
+        "profile excercise social self-care";
+    grid-auto-columns: minmax(0, 1fr);
+}
+
+.profile-picture {
+    border: 3px solid white;
+    border-radius: 50%;
+    max-width: 75px;
+    margin-bottom: 1rem;
+    grid-area: picture;
+}
+
+section {
+    background-color: var(--dark-blue);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+section:hover:not(.profile) {
+    cursor: pointer;
+    background-color: var(--desat-blue);
+}
+
+section:hover>.picture::after {
+    background-color: var(--desat-blue);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 1.5rem;
+}
+
+.title a {
+    display: inline-block;
+    font-size: 0;
+    padding: 0.5rem 0;
+    height: 100%;
+    pointer-events: all;
+}
+
+section h3 {
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+section h2 {
+    font-weight: 300;
+    color: white;
+    font-size: 3rem;
+    margin: 0 0 0.5rem;
+}
+
+section p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.profile {
+    grid-area: profile;
+    padding: 2rem 2rem 1.5rem;
+    background-color: transparent;
+    position: relative;
+}
+
+.profile::before {
+    content: "";
+    background-color: var(--blue);
+    width: 100%;
+    height: 65%;
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+    position: absolute;
+    z-index: -1;
+}
+
+.profile::after {
+    content: "";
+    background-color: var(--dark-blue);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+    position: absolute;
+    z-index: -2;
+
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+    grid-area: name;
+}
+
+.profile p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.85rem;
+    grid-area: p;
+}
+
+.selector {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    margin: 3rem 0 1.5rem;
+    font-weight: 300;
+    grid-area: selector;
+}
+
+.selector a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0.5rem 0;
+    user-select: none;
+}
+
+.selector a:hover {
+    color: white;
+}
+
+.work {
+    grid-area: work;
+}
+
+.work .picture {
+    background-color: var(--work);
+}
+
+.play {
+    grid-area: play;
+}
+
+.play .picture {
+    background-color: var(--play);
+}
+
+.study {
+    grid-area: study;
+}
+
+.study .picture {
+    background-color: var(--study);
+}
+
+.excercise {
+    grid-area: excercise;
+}
+
+.excercise .picture {
+    background-color: var(--excercise);
+}
+
+.social {
+    grid-area: social;
+}
+
+.social .picture {
+    background-color: var(--social);
+}
+
+.self-care {
+    grid-area: self-care;
+}
+
+.self-care .picture {
+    background-color: var(--self-care);
+}
+
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+
+    body {
+        padding: 4rem 0;
+    }
+
+    .container {
+        grid-template-areas: "profile profile"
+            "work play"
+            "study excercise"
+            "social self-care";
+    }
+
+    .profile {
+        width: auto;
+        padding: 2rem 1rem 1rem;
+    }
+
+    .profile-main {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10%;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+
+    .profile-picture {
+        width: 75%;
+        border: 2px solid white;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    .selector {
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        margin: 2rem 0 0;
+    }
+
+    section h2 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        grid-template-areas: "profile"
+            "work"
+            "play"
+            "study"
+            "excercise"
+            "social"
+            "self-care";
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .picture {
+        margin: -1rem -1rem 1rem;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .title {
+        margin-bottom: 0.5rem;
+    }
+
+    .info>* {
+        margin: 0;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}

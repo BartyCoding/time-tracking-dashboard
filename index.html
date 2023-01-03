@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <section class="profile">
+      <div class="profile-main">
+        <img class="profile-picture" src="images/image-jeremy.png" alt="jeremy robson">
+        <div class="profile-info">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="selector">
+        <a href="#" id="daily">Daily</a>
+        <a href="#" id="weekly" class="selected">Weekly</a>
+        <a href="#" id="monthly">Monthly</a>
+      </div>
+    </section>
+
+    <section class="work">
+      <div class="picture">
+        <img src="images/icon-work.svg" alt="">
+      </div>
+      <div class="title">
+        <h3>Work</h3>
+        <a href="#"><img src="images/icon-ellipsis.svg" alt="more info"></a>
+      </div>
+      <div class="info">
+        <h2 class="daily hide">5hrs</h2>
+        <p class="daily hide">Yesterday - 7hrs</p>
+        <h2 class="weekly">32hrs</h2>
+        <p class="weekly">Last Week - 36hrs</p>
+        <h2 class="monthly hide">103hrs</h2>
+        <p class="monthly hide">Last Month - 128hrs</p>
+      </div>
+    </section>
+
+    <section class="play">
+      <div class="picture">
+        <img src="images/icon-play.svg" alt="">
+      </div>
+      <div class="title">
+        <h3>Play</h3>
+        <a href="#"><img src="images/icon-ellipsis.svg" alt="more info"></a>
+      </div>
+      <div class="info">
+        <h2 class="daily hide">1hr</h2>
+        <p class="daily hide">Yesterday - 2hrs</p>
+        <h2 class="weekly">10hrs</h2>
+        <p class="weekly">Last Week - 8hrs</p>
+        <h2 class="monthly hide">23hrs</h2>
+        <p class="monthly hide">Last Month - 29hrs</p>
+      </div>
+    </section>
+
+    <section class="study">
+      <div class="picture">
+        <img src="images/icon-study.svg" alt="">
+      </div>
+      <div class="title">
+        <h3>Study</h3>
+        <a href="#"><img src="images/icon-ellipsis.svg" alt="more info"></a>
+      </div>
+      <div class="info">
+        <h2 class="daily hide">0hrs</h2>
+        <p class="daily hide">Yesterday - 1hr</p>
+        <h2 class="weekly">4hrs</h2>
+        <p class="weekly">Last Week - 7hrs</p>
+        <h2 class="monthly hide">13hrs</h2>
+        <p class="monthly hide">Last Month - 19hrs</p>
+      </div>
+    </section>
+
+    <section class="excercise">
+      <div class="picture">
+        <img src="images/icon-exercise.svg" alt="">
+      </div>
+      <div class="title">
+        <h3>Excercise</h3>
+        <a href="#"><img src="images/icon-ellipsis.svg" alt="more info"></a>
+      </div>
+      <div class="info">
+        <h2 class="daily hide">1hr</h2>
+        <p class="daily hide">Yesterday - 1hr</p>
+        <h2 class="weekly">4hrs</h2>
+        <p class="weekly">Last Week - 5hrs</p>
+        <h2 class="monthly hide">11hrs</h2>
+        <p class="monthly hide">Last Month - 18hrs</p>
+      </div>
+    </section>
+
+    <section class="social">
+      <div class="picture">
+        <img src="images/icon-social.svg" alt="">
+      </div>
+      <div class="title">
+        <h3>Social</h3>
+        <a href="#"><img src="images/icon-ellipsis.svg" alt="more info"></a>
+      </div>
+      <div class="info">
+        <h2 class="daily hide">1hr</h2>
+        <p class="daily hide">Yesterday - 3hrs</p>
+        <h2 class="weekly">5hrs</h2>
+        <p class="weekly">Last Week - 10hrs</p>
+        <h2 class="monthly hide">21hrs</h2>
+        <p class="monthly hide">Last Month - 23hrs</p>
+      </div>
+    </section>
+
+    <section class="self-care">
+      <div class="picture">
+        <img src="images/icon-self-care.svg" alt="">
+      </div>
+      <div class="title">
+        <h3>Self Care</h3>
+        <a href="#"><img src="images/icon-ellipsis.svg" alt="more info"></a>
+      </div>
+      <div class="info">
+        <h2 class="daily hide">0hrs</h2>
+        <p class="daily hide">Yesterday - 1hrs</p>
+        <h2 class="weekly">2hrs</h2>
+        <p class="weekly">Last Week - 2hrs</p>
+        <h2 class="monthly hide">7hrs</h2>
+        <p class="monthly hide">Last Month - 11hrs</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
